@@ -32,7 +32,7 @@ RSpec.describe Shelter do
 
     it 'has no pets by default' do
       shelter = Shelter.new('Denver Animal Shelter', 5)
-      
+
       expect(shelter.pets).to eq []
       # => []
     end
@@ -40,19 +40,26 @@ RSpec.describe Shelter do
 
   # Iteration 2
   describe '#add_pet' do
-    xit 'returns a list of pets' do
-      shelter = Shelter.new('Denver Animal Shelter', 5)
+    it 'returns a list of pets' do
+            shelter = Shelter.new('Denver Animal Shelter', 5)
       shelter.add_pet('Salem')
+      # => ["Salem"]
       shelter.add_pet('Beethoven')
+      # => ["Salem", "Beethoven"]
       shelter.add_pet('Spot')
+      #=> ["Salem", "Beethoven", "Spot"]
       shelter.add_pet('Jonesy')
+      # => ["Salem", "Beethoven", "Spot", "Jonesy"]
 
       expect(shelter.pets).to eq(['Salem', 'Beethoven', 'Spot', 'Jonesy'])
+      # => ["Salem", "Beethoven", "Spot", "Jonesy"]
     end
   end 
 
   describe '#call_pets' do
-      xit 'returns a list of names with exclamation points appended' do
+
+    require 'pry'; binding.pry
+      it 'returns a list of names with exclamation points appended' do
         shelter = Shelter.new('Denver Animal Shelter', 5)
         shelter.add_pet('Salem')
         shelter.add_pet('Beethoven')
@@ -63,3 +70,5 @@ RSpec.describe Shelter do
       end
     end
 end
+
+  #Iteration 3
