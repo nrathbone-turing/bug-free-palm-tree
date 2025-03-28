@@ -3,26 +3,38 @@ require './lib/shelter'
 
 RSpec.describe Shelter do
 
+  before(:each) do
+
+  end
+
   # Iteration 1
   describe '#initialize' do
-    xit 'is a Shelter' do
-      shelter = Shelter.new('Denver Animal Shelter', 5)
+    it 'is a Shelter' do
+      shelter = Shelter.new('Denver Animal Shelter', 5,[])
+      
       expect(shelter).to be_a(Shelter)
+      # => #<Shelter:0x00000001048f0ed0 @capacity=5, @name="Denver Animal Shelter", @pets=[]>
     end
 
-    xit 'can read the name' do
+    it 'can read the name' do
       shelter = Shelter.new('Denver Animal Shelter', 5)
       expect(shelter.name).to eq('Denver Animal Shelter')
+      # => "Denver Animal Shelter"
     end
+    
 
-    xit 'can read the capacity' do
+    it 'can read the capacity' do
       shelter = Shelter.new('Denver Animal Shelter', 5)
+
       expect(shelter.capacity).to eq(5)
+      # => 5
     end
 
-    xit 'has no pets by default' do
+    it 'has no pets by default' do
       shelter = Shelter.new('Denver Animal Shelter', 5)
+      
       expect(shelter.pets).to eq []
+      # => []
     end
   end
 
